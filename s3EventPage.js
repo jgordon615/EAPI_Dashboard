@@ -20,7 +20,14 @@ if (loaded) {
 
 
 if (urls.length > 0) {
-	chrome.webRequest.onBeforeSendHeaders.addListener(injectS3Header, { urls: urls, types: ["main_frame"] }, ["blocking", "requestHeaders"]);
+	chrome.webRequest.onBeforeSendHeaders.addListener(
+		injectS3Header, 
+		{ 
+			urls: urls/*, 
+			types: ["main_frame"]*/
+		}, 
+		["blocking", "requestHeaders"]
+	);
 }
 
 function executeScriptOnCurrentTab(script) {

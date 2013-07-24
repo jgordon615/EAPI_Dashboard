@@ -51,6 +51,8 @@ function BuildSecurityContext(webRequest) {
 		+ "{3}\n"   //eapiHeaders
 		+ "{4}";    //resource
 
+	var plainText = template;
+		
 	// Since this is only for the omnibox, there will never be POSTed data
 	// so we skip the MD5 portion of the S3 algorithm.
 	var contentMd5 = "";
@@ -75,8 +77,6 @@ function BuildSecurityContext(webRequest) {
 		}
 	}
 	eapiHeaders.sort();
-
-	var plainText = template;
 
 	plainText = plainText.replace(/\{0\}/g, webRequest.method);
 	plainText = plainText.replace(/\{1\}/g, contentMd5);
