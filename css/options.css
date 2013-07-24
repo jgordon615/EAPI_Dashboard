@@ -1,0 +1,62 @@
+body {
+	color: rgb(48, 57, 66);
+	padding: 10px;
+	font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+table {
+	table-layout: fixed;
+}
+
+h1 {
+	-webkit-user-select: none;
+	font-size: 18px;
+	font-weight: normal;
+	clear: both;
+}
+
+th {
+	font-size: 14px;
+}
+
+td {
+	font-size: 14px;
+}
+
+.activeApiKeyColumn {
+	text-align: center;
+}
+
+.publicKeyColumn,
+.nameColumn {
+	width: 150px;
+}
+.publicKeyColumn input,
+.nameColumn input {
+	width: 100%;
+}
+.privateKeyColumn,
+.addressColumn {
+	width: 400px;
+}
+.privateKeyColumn input,
+.addressColumn input {
+	width: 100%;
+}
+
+tfoot tr td {
+	padding-top: 15px;
+}
+
+.resetApiKeysButton,
+.resetEnvironmentButton {
+	float: right;
+}
+
+.spacer {
+	height:20px;
+}
+
+.couchLocation {
+	width: 300px;
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Enterprise API Extension</title>
+		<link rel="stylesheet" href="css/chrome_shared.css" type="text/css" />
+		<link rel="stylesheet" href="css/options.css" type="text/css" />
+		<link rel="stylesheet" href="css/popup.css" type="text/css" />
+		<script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="lib/knockout-2.3.0.js" type="text/javascript"></script>
+		<script src="lib/knockout.mapping-latest.js" type="text/javascript"></script>
+		<script src="popup.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<a target="_blank" data-bind="attr: { href: optionsUrl }">Options</a><br />
+		<br />
+		<h1>Environments:</h1>
+		<div data-bind="visible:environments().length, foreach:environments">
+			<a target="_blank" data-bind="attr: { href: address }, text: name"></a><br />
+		</div>
+		<div data-bind="visible:!environments().length">
+			<i>You have no environments!  Set some up in the options page.</i>
+		</div>
+		
+		<div data-bind="if:showApiKeys">
+			<div class="spacer"></div>
+			
+			<h1>API Keys:</h1>
+			<div data-bind="visible:apiKeys().length, foreach:apiKeys">
+				<a data-bind="click:$root.setApiKey, text: publicKey"></a><br />
+			</div>
+			<div data-bind="visible:!apiKeys().length">
+				<i>You have no api keys!  Set some up in the options page.</i>
+			</div>
+		</div>
+	</body>
+</html>
+

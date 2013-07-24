@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "EAPI Dashboard",
+  "description": "Interaction with enterprise API.",
+  "version": "1.0.1",
+
+  "permissions": [
+	"tabs",
+	"webRequest",
+	"webRequestBlocking",
+	"webNavigation",
+	"background",
+	"<all_urls>"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["lib/parseURI.js", "lib/2.5.3-crypto-sha256-hmac.js", "s3.js", "s3EventPage.js"],
+    "persistent": true
+  },
+  "options_page": "options.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
